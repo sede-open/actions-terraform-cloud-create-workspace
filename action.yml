@@ -1,0 +1,31 @@
+name: 'Terraform Cloud Create Workspace'
+description: 'Creates Workspace in Terraform Cloud'
+author: 'Bardavon Health Innovations'
+branding:
+  icon: 'cloud'
+  color: 'orange'
+inputs:
+  token:
+    description: 'API Token'
+    required: true
+  name:
+    description: 'TF Workspace Name'
+    required: true
+  org:
+    description: 'TF Organization Name'
+    required: true
+  desc:
+    description: 'TF Workspace Description'
+    required: false
+  exec_mode:
+    description: 'Execution Mode, `local` to execute TF in Github Actions (default: `remote`)'
+    required: false
+  env:
+    description: 'TF Workspace Environment'
+    required: false
+  tf_version:
+    description: 'TF Version to use in workspace (default: `latest`)'
+    required: false
+runs:
+  using: 'node12'
+  main: 'index.js'
